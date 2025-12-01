@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
              $table->string("name");
             $table->string("lastName");
-            $table->integer('age');
+            $table->integer("age");
+            $table->enum("gender",["m","f"])->default("f");
             $table->timestamps();
         });
     }

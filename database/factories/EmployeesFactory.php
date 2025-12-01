@@ -20,7 +20,9 @@ class EmployeesFactory extends Factory
             //
             "name"=>$this->faker->name(),
             "lastName"=>$this->faker->lastName(),
-            "age"=>$this->faker->numberBetween(18,30),
+            "age"=>$this->faker->numberBetween(10,60),
+            "gender"=>$this->faker->randomElement(["m","f"]),
+            
         ];
     }
 }

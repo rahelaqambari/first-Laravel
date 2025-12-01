@@ -94,8 +94,19 @@ Route::get("order",[CenterController::class, "order"]);
 
 
 
-
+// curd in the Eloquent ORM
 Route::get("seeData",[EmployeesController::class, "seeData"]);
 Route::get("addinfo",[EmployeesController::class, "addinfo"]);
 Route::get("read",[EmployeesController::class, "read"]);
 Route::get("change",[EmployeesController::class, "change"]);
+
+// Query Scop
+Route::get("ladiesc",[EmployeesController::class, "childLadies"]);
+Route::get("ladiesy",[EmployeesController::class, "YoungLadies"]);
+Route::get("ladieso",[EmployeesController::class, "oldLadies"]);
+
+
+// Delete part
+Route::get("hazf",[EmployeesController::class, "deleted"]);
+Route::get("showD",[EmployeesController::class, "showD"]);
+Route::get("restor",[EmployeesController::class, "restore"]);
