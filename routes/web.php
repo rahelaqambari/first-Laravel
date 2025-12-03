@@ -110,3 +110,8 @@ Route::get("ladieso",[EmployeesController::class, "oldLadies"]);
 Route::get("hazf",[EmployeesController::class, "deleted"]);
 Route::get("showD",[EmployeesController::class, "showD"]);
 Route::get("restor",[EmployeesController::class, "restore"]);
+
+// grouping routes
+Route::prefix('employee')->controller(EmployeesController::class)->group(function(){
+    Route::get('/','fetchemployee');
+}); 

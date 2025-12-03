@@ -72,6 +72,10 @@ class EmployeesController extends Controller
         return "one item is restored";
     }
 
+    public function fetchemployee(){
+        view("Employee.home");
+    }
+
 
 
 }
