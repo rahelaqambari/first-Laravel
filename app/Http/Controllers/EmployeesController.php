@@ -72,10 +72,18 @@ class EmployeesController extends Controller
         return "one item is restored";
     }
 
-    public function fetchemployee(){
-        view("Employee.home");
+    public function fetchemployee(Request $request){
+        $employee = Employees::when($request->search,function($qurey) use($request){
+          $qurey->whereAny([
+            "name",
+            "lastName",
+            "age",
+            "gender",
+          ],"LIKE",'%'.$request->search.'%');  
+        })->paginate(12);
+       return view("Employee.home",compact('employee'));
     }
-
+  
 
 
 }
