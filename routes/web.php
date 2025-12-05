@@ -114,4 +114,6 @@ Route::get("restor",[EmployeesController::class, "restore"]);
 // grouping routes
 Route::prefix('employee')->controller(EmployeesController::class)->group(function(){
     Route::get('/','fetchemployee');
+    Route::view('add','Employee.add');
+    Route::post('create','create');
 }); 

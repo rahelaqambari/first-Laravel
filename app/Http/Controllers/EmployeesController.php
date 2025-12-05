@@ -83,6 +83,15 @@ class EmployeesController extends Controller
         })->paginate(12);
        return view("Employee.home",compact('employee'));
     }
+    public function create(Request $request){
+        $employe = new Employees();
+        $employe->name = $request->name;
+        $employe->lastName = $request->lastName;
+        $employe->age = $request->age;
+        $employe->gender = $request->gender;
+        $employe->save();
+        return redirect("employee");
+    }
   
 
 
