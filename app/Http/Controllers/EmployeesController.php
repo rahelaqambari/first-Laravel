@@ -34,10 +34,10 @@ class EmployeesController extends Controller
 
     }
     public function change(){
-        $changeemplo = Employees::find(2);
-        $changeemplo->name="Amir Hasam";
-        $changeemplo->lastName="Faramarz";
-        $changeemplo->age="24";
+        $changeemplo = Employees::find(5);
+        $changeemplo->name="Amir Adel";
+        $changeemplo->lastName="Zand";
+        $changeemplo->age="45";
         $changeemplo->update();
         return "Data update shoda";
     }
@@ -70,6 +70,10 @@ class EmployeesController extends Controller
     public function restore(){
         Employees::withTrashed()->findOrFail(1)->restore();
         return "one item is restored";
+    }
+    public function restred(){
+        Employees::onlyTrashed()->findOrFail(5)->restore();
+        return "only trashed";
     }
 
     public function fetchemployee(Request $request){
