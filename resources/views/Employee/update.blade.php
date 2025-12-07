@@ -42,9 +42,9 @@
 <body>
     <div class="main">
         <div>
-            <h1>Add Employees</h1>
+            <h1>Update Employees</h1>
         </div>
-        <form action="{{ URL('employee/create') }}" method="post" >
+        <form action="{{ URL('') }}" method="post" >
             @csrf
              {{-- cross site reqeust forgery --}}
             <input type="text" name="name" placeholder="Enter your name" >

@@ -88,6 +88,8 @@
             <td>{{ $employ->lastName }}</td>
             <td>{{ $employ->age }}</td>
             <td>{{ $employ->gender }}</td>
+            <td><a href="{URL() }"></a>Update</td>
+            <td><a href="{URL()}"></a>Delete</td>
             </tr>
             
             @endforeach
