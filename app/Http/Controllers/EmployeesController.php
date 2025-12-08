@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\FormAddRequest;
 use App\Models\Employees;
 use DB;
 use Illuminate\Http\Request;
@@ -87,13 +88,36 @@ class EmployeesController extends Controller
         })->paginate(12);
        return view("Employee.home",compact('employee'));
     }
-    public function create(Request $request){
+    public function create(FormAddRequest $request){
+        // Form validation
+
         $employe = new Employees();
         $employe->name = $request->name;
         $employe->lastName = $request->lastName;
         $employe->age = $request->age;
         $employe->gender = $request->gender;
         $employe->save();
+        return redirect("employee");
+    }
+
+    // update part
+    public function update($id){
+     $employee = Employees::findOrFail($id);
+     return view('employee.update', compact('employee'));
+    }
+
+    public function Edit(Request $request,$id){
+       $employee = Employees::findOrFail($id);
+       $employee->name= $request->name;
+       $employee->lastName= $request->lastName;
+       $employee->age= $request->age ;
+       $employee->gender= $request->gender;
+       $employee->update();
+       return redirect("employee");
+    }
+
+    public function destroy(Request $request, $id){
+        Employees::findOrFail($id)->delete();
         return redirect("employee");
     }
   

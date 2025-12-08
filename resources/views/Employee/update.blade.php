@@ -44,15 +44,16 @@
         <div>
             <h1>Update Employees</h1>
         </div>
-        <form action="{{ URL('') }}" method="post" >
+        <form action="{{ URL('employee/edit',$employee->id) }}" method="post" >
             @csrf
+            @method('put')
              {{-- cross site reqeust forgery --}}
-            <input type="text" name="name" placeholder="Enter your name" >
-            <input type="text" name="lastName" placeholder="Enter your lastname" >
-            <input type="text" name="age" placeholder="Enter your age" >
+            <input type="text" value="{{ $employee->name }}" name="name" placeholder="Enter your name" >
+            <input type="text" value="{{ $employee->lastName}}" name="lastName" placeholder="Enter your lastname" >
+            <input type="number" value="{{ $employee->age }}" name="age" placeholder="Enter your age" >
             <h3><label >Gender</label></h3>
-            Male <input type="radio" name="gender" value="m">
-            Female <input type="radio" name="gender" value="f">
+            Male <input type="radio" name="gender" value="m" {{ $employee->gender=="m"?"checked":"" }}>
+            Female <input type="radio" name="gender" value="f" {{ $employee->gender=="f"?"checked":"" }}>
             <button type="submit">Save</button>
         </form>
     </div>

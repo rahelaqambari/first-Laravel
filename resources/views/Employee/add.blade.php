@@ -42,6 +42,17 @@
 <body>
     <div class="main">
         <div>
+            @if ($errors->any())
+            <ol>
+                @foreach ($errors->all() as $erorr )
+                <li>{{ $erorr }}</li>
+                @endforeach
+            </ol>
+            
+            @endif
+            
+        </div>
+        <div>
             <h1>Add Employees</h1>
         </div>
         <form action="{{ URL('employee/create') }}" method="post" >

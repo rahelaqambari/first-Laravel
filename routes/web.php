@@ -116,4 +116,7 @@ Route::prefix('employee')->controller(EmployeesController::class)->group(functio
     Route::get('/','fetchemployee');
     Route::view('add','Employee.add');
     Route::post('create','create');
+    Route::get('update/{id}','update');
+    Route::put('edit/{id}','Edit');
+    Route::delete('delete/{id}','destroy');
 }); 

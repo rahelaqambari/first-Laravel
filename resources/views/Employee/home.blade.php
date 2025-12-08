@@ -45,7 +45,7 @@
         th{
             background-color: darkcyan;
             color: white;
-            padding: 12px 90px;
+            padding: 12px 60px;
         }
         td{
          padding: 12px 16px;
@@ -80,6 +80,8 @@
                 <th>Lastname</th>
                 <th>Age</th>
                 <th>Gender</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
              @foreach ($employee as $employ )
              <tr>
@@ -88,8 +90,15 @@
             <td>{{ $employ->lastName }}</td>
             <td>{{ $employ->age }}</td>
             <td>{{ $employ->gender }}</td>
-            <td><a href="{URL() }"></a>Update</td>
-            <td><a href="{URL()}"></a>Delete</td>
+            <td><a href="{{ URL('employee/update/').'/'. $employ->id }}">Update</a></td>
+            <td>
+                <form action="{{ URl('employee/delete', $employ->id) }}" method="post" onsubmit="return confirm('Are sure want to delete it!')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="onsbmit">Delete</button>
+                </form>
+            </td>
+
             </tr>
             
             @endforeach
