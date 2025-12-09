@@ -5,6 +5,7 @@ use App\Http\Requests\FormAddRequest;
 use App\Models\Employees;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeesController extends Controller
 {
@@ -121,7 +122,11 @@ class EmployeesController extends Controller
     }
 
     public function destroy(Request $request, $id){
-        Employees::findOrFail($id)->delete();
+        $employee =  Employees::findOrFail($id);
+        if($employee->image){
+            Storage::disk('public')->delete($employee->image);
+        }
+        $employee->delete();
         return redirect("employee");
     }
   

@@ -45,11 +45,16 @@
         th{
             background-color: darkcyan;
             color: white;
-            padding: 12px 60px;
+            padding: 12px 40px;
         }
         td{
          padding: 12px 16px;
          border: 2px solid black;
+        }
+        td>img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
         }
         div.page{
             width: 100px;
@@ -75,6 +80,7 @@
         </div>
         <table>
             <tr>
+                <th>Image</th>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Lastname</th>
@@ -85,6 +91,12 @@
             </tr>
              @foreach ($employee as $employ )
              <tr>
+                <td>
+                    @if ($employ->image)
+                    <img src="{{ asset('storage/'.$employ->image) }}" alt="image">
+                    
+                    @endif
+                </td>
             <td>{{ $employ->id }}</td>
             <td>{{ $employ->name }}</td>
             <td>{{ $employ->lastName }}</td>
