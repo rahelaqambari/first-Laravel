@@ -90,12 +90,16 @@ class EmployeesController extends Controller
     }
     public function create(FormAddRequest $request){
         // Form validation
-
+        $imagepath = null;
+        if($request->hasFile('image')){
+            $imagepath = $request->file('image')->store('photos','public');
+        }
         $employe = new Employees();
         $employe->name = $request->name;
         $employe->lastName = $request->lastName;
         $employe->age = $request->age;
         $employe->gender = $request->gender;
+        $employe->image = $imagepath;
         $employe->save();
         return redirect("employee");
     }

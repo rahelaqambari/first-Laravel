@@ -17,6 +17,10 @@
             text-align: center;
             color: white;
         }
+        div.main>div.erorr{
+            background-color: red;
+
+        }
             form{
                 display: block;
             }
@@ -41,7 +45,7 @@
 </head>
 <body>
     <div class="main">
-        <div>
+        <div class="erorr">
             @if ($errors->any())
             <ol>
                 @foreach ($errors->all() as $erorr )
@@ -55,15 +59,17 @@
         <div>
             <h1>Add Employees</h1>
         </div>
-        <form action="{{ URL('employee/create') }}" method="post" >
+        <form enctype="multipart/form-data" action="{{ URL('employee/create') }}" method="post" >
             @csrf
              {{-- cross site reqeust forgery --}}
-            <input type="text" name="name" placeholder="Enter your name" >
-            <input type="text" name="lastName" placeholder="Enter your lastname" >
-            <input type="text" name="age" placeholder="Enter your age" >
+            <input type="text" value="{{ old('name') }}" name="name" placeholder="Enter your name" >
+            <input type="text" value="{{ old('lastName') }}" name="lastName" placeholder="Enter your lastname" >
+            <input type="text" value="{{ old('age') }}" name="age" placeholder="Enter your age" >
             <h3><label >Gender</label></h3>
-            Male <input type="radio" name="gender" value="m">
-            Female <input type="radio" name="gender" value="f">
+            Male <input type="radio" name="gender" value="m" {{ old('gender') ==="m"? "checked":"" }} >
+            Female <input type="radio" name="gender" value="f" {{ old('gender') ==="f"? "checked":"" }}>
+            <label for="image">Profile picture</label>
+            <input type="file" name="image" id="image" accept="image/*" >
             <button type="submit">Save</button>
         </form>
     </div>
