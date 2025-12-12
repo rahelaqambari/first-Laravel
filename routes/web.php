@@ -3,7 +3,9 @@
 use App\Http\Controllers\CenterController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\FruitsController;
+use App\Http\Controllers\SongesController;
 use App\Http\Controllers\studentcontroler;
 use App\Http\Controllers\teachercontroller;
 use App\Http\Controllers\CountriesController;
@@ -120,3 +122,9 @@ Route::prefix('employee')->controller(EmployeesController::class)->group(functio
     Route::put('edit/{id}','Edit');
     Route::delete('delete/{id}','destroy');
 }); 
+// for music
+Route::prefix('songs')->controller(SongesController::class)->group(function(){
+    Route::view('/add','Song.insert');
+    Route::get('/','index');
+    Route::post('insert','create');
+});
