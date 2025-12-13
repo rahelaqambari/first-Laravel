@@ -11,18 +11,14 @@ class SongesController extends Controller
      public function create(Request $request){
         // Form validation
         $song = new Songes();
-        // $request->validate([
-        //     "singer"=>"required|string|max:30",
-        //     "song"=>"nullable|audio|mimes:mp3,wav|max:12288"
-        // ]);
         $filepath = null;
-        if($request->hasFile('')){
+        if($request->hasFile('song')){
             $filepath = $request->file('song')->store('songs','public');
         }
         $song->singer = $request->singer;
-        $song->song = $request->$filepath;
+        $song->song = $filepath;
         $song->save();
-        return redirect("/");
+        return redirect("songs");
     }
     public function index(){
        $song =  Songes::all();
