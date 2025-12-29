@@ -11,36 +11,11 @@
             margin: 0;
             box-sizing: border-box;
         }
-        div.nav{
-            background-color: gray ;
-            justify-content: space-between;
-            width: 100%;
-            height: 50px;
-            display: flex ;
-            padding: 5px 12px;
-        }
-        div.nav>h1{
-            font-size: 40px;
-            color: white;
-        }
-    div.main{
-        padding: 60px 2px;
-        color: white; 
-        gap: 40px;
-        text-align: center;
-        background-color: gray;
-    }
-    div.main>p{
-        width: auto;
-        padding: 40px 120px;
-        text-align: center;
-    }
-    div.main>div{
-        display: flex;
-        color: beige;
-        gap: 60px;
-        justify-content: center;
-    }
+      div.main>img{
+        height: auto;
+        width: 100%;
+
+      }
     div.music{
         color: gray;
         padding: 12px 8px;
@@ -76,24 +51,10 @@
     </style>
 </head>
 <body>
-    <div class="nav">
-        <h1>🎼</h1>
-        <h1>All Songes</h1>
-        <!-- <img src="/img/download (8).jfif" alt=""> -->
-
-    </div>
+   
     <div class="main">
-        <!-- <img src="/img/download (8).jfif" alt=""> -->
-        <h1>All Songs</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi illum itaque fugiat alias? Tenetur beatae, officia molestias quaerat commodi nihil at vitae harum minima, natus expedita totam laboriosam temporibus aliquid. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed illo quae, incidunt nam quod non? Est ea quisquam, excepturi quae minima, officiis iure molestias dolorum eius laudantium eum ut recusandae? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla ex laboriosam amet eligendi aspernatur ipsum cum! Ducimus ea sit nobis obcaecati Lorem Lorem officia architecto repudiandae libero et quisquam, quas, qui voluptatibus.lorem</p>
-        <div>
-            <h3>POP Music</h3>
-            <h3>Jazz Music</h3>
-            <h3>Bolero Music</h3>
-            <h3>Baroque Music</h3>
-            <h3>Tango Music</h3>
-            <h3>Lovely Music</h3>
-        </div>
+        <img src="/img/download (11).jfif" alt="">
+        
     </div>
     <div class="music">
         <h1>You Can Find Here The Best Music!</h1>
