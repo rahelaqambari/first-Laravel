@@ -28,6 +28,11 @@
         padding: 23px 8px;
         justify-content: center;
     }
+    p{
+        padding: 2px 4px;
+        background-color:cyan ;
+        border: 1px solid bule;
+    }
     div.footer{
         background-color: gray;
         text-align: center;
