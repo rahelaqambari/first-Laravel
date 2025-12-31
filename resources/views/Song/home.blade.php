@@ -54,7 +54,7 @@
    
     <div class="main">
         <img src="/img/download (11).jfif" alt="">
-        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ut natus, eveniet voluptatum ex inventore praesentium aperiam quas, asperiores animi eaque excepturi reprehenderit explicabo reiciendis consequatur esse. Odit, autem commodi?</p>        
     </div>
     <div class="music">
         <h1>You Can Find Here The Best Music!</h1>
